@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 // Set up EJS as the view engine
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // Ensure this line is present
 app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files (CSS and JS)

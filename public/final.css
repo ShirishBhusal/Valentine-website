@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e3e3; /* Soft pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  h2 {
+    color: #e74c3c; /* Red color for the heading */
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .countdown {
+    margin-bottom: 20px;
+  }
+  
+  #countdown-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #countdown-timer {
+    font-size: 3rem;
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .valentine-question {
+    margin-bottom: 20px;
+  }
+  
+  .valentine-question p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #yes-button, #no-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  #yes-button {
+    background-color: #4CAF50; /* Green for Yes */
+    color: #fff;
+  }
+  
+  #no-button {
+    background-color: #e74c3c; /* Red for No */
+    color: #fff;
+  }
+  
+  #yes-button:hover {
+    background-color: #45a049;
+  }
+  
+  #no-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .hidden-message {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin-top: 20px;
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    #countdown-text {
+      font-size: 1rem;
+    }
+  
+    #countdown-timer {
+      font-size: 2rem;
+    }
+  
+    .valentine-question p {
+      font-size: 1rem;
+    }
+  
+    #yes-button, #no-button {
+      font-size: 1rem;
+    }
+  
+    .hidden-message {
+      font-size: 1rem;
+    }
+  }

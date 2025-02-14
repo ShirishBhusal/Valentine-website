@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reasons Why I Love You</title>
+  <link rel="stylesheet" href="/reason.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Reasons Why I Love You 💕</h2>
+    <p class="subtext">Here are just a few reasons why you mean the world to me:</p>
+
+    <!-- Reasons List -->
+    <div class="reasons-list">
+      <div class="reason" data-number="8">
+        <p>7. Your smile brightens my day. 😊</p>
+      </div>
+      <div class="reason" data-number="6">
+        <p>6. Your laughter is my favorite sound. 😆</p>
+      </div>
+      <div class="reason" data-number="5">
+        <p>5. You make every moment special. 🌟</p>
+      </div>
+      <div class="reason" data-number="4">
+        <p>4. I can’t help but cherish every moment we spend together. 💌</p>
+      </div>
+      <div class="reason" data-number="3">
+        <p>3. You make my heart smile.😊 </p>
+      </div>
+      <div class="reason" data-number="2">
+        <p>2. You’re the most beautiful person I know. 💐</p>
+      </div>
+      <div class="reason" data-number="1">
+        <p>1. I love you because you’re you. 💕</p>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <form action="/valentine" method="GET">
+      <button type="submit" id="next-button">Next</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to reveal reasons one by one
+    function revealReasons() {
+      const reasons = document.querySelectorAll('.reason');
+      reasons.forEach((reason, index) => {
+        setTimeout(() => {
+          reason.classList.add('visible');
+        }, index * 1000); // Delay each reason by 1 second
+      });
+    }
+
+    // Call the function when the page loads
+    revealReasons();
+  </script>
+</body>
+</html>

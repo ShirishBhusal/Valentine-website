@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Quiz</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Quiz 🎭</h2>
+    <p class="subtext">Let’s see how well you know! 😊</p>
+
+    <!-- Quiz Questions -->
+    <div class="quiz">
+      <div id="question-1" class="question">
+        <p>1. Where did we first talk?</p>
+        <button class="quiz-button" onclick="checkAnswer(1, 'A')">A. School</button>
+        <button class="quiz-button" onclick="checkAnswer(1, 'B')">B. Social Media</button>
+        <button class="quiz-button" onclick="checkAnswer(1, 'C')">C. A Party</button>
+        <p id="answer-text-1" class="answer-text"></p>
+      </div>
+
+      <div id="question-2" class="question" style="display: none;">
+        <p>2. What’s my favorite thing about you?</p>
+        <button class="quiz-button" onclick="checkAnswer(2, 'A')">A. Your Smile</button>
+        <button class="quiz-button" onclick="checkAnswer(2, 'B')">B. Your Kindness</button>
+        <button class="quiz-button" onclick="checkAnswer(2, 'C')">C. Everything! 😆</button>
+        <p id="answer-text-2" class="answer-text"></p>
+      </div>
+
+      <div id="question-3" class="question" style="display: none;">
+        <p>3. Where we met for the first time?</p>
+        <button class="quiz-button" onclick="checkAnswer(3, 'A')">A. Kathmandu Mall</button>
+        <button class="quiz-button" onclick="checkAnswer(3, 'B')">B. Ratnapark</button>
+        <button class="quiz-button" onclick="checkAnswer(3, 'C')">C. College</button>
+        <p id="answer-text-3" class="answer-text"></p>
+      </div>
+
+      <div id="question-4" class="question" style="display: none;">
+        <p>4. What’s my favorite memory with you?</p>
+        <button class="quiz-button" onclick="checkAnswer(4, 'A')">A. Our First Date</button>
+        <button class="quiz-button" onclick="checkAnswer(4, 'B')">B. Our First Talk</button>
+        <button class="quiz-button" onclick="checkAnswer(4, 'C')">C. Every Moment! 😆</button>
+        <p id="answer-text-4" class="answer-text"></p>
+      </div>
+
+      <div id="question-5" class="question" style="display: none;">
+        <p>5. What’s my favorite nickname for you?</p>
+        <button class="quiz-button" onclick="checkAnswer(5, 'A')">A. Ashmi</button>
+        <button class="quiz-button" onclick="checkAnswer(5, 'B')">B. Love</button>
+        <button class="quiz-button" onclick="checkAnswer(5, 'C')">C. Miss</button>
+        <p id="answer-text-5" class="answer-text"></p>
+      </div>
+
+      <div id="question-6" class="question" style="display: none;">
+        <p>6. When did I propose to you for the first time?</p>
+        <button class="quiz-button" onclick="checkAnswer(6, 'A')">A. Within a Month 😆</button>
+        <button class="quiz-button" onclick="checkAnswer(6, 'B')">B. Within a Day 😆</button>
+        <button class="quiz-button" onclick="checkAnswer(6, 'C')">C. Within a Week 😆</button>
+        <p id="answer-text-6" class="answer-text"></p>
+      </div>
+    </div>
+
+    <!-- Final Message (Hidden Initially) -->
+    <div id="final-message" class="final-message" style="display: none;">
+      <p>You’ve completed the quiz! 🎉 You remembered! You are the best! 💖</p>
+      <form action="/reasons" method="GET">
+        <button type="submit" id="next-button">Next</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Correct answers for each question
+    const correctAnswers = ['B', 'C', 'A', 'C', 'C', 'C'];
+
+    // Function to check the answer
+    function checkAnswer(questionNumber, selectedAnswer) {
+      const correctAnswer = correctAnswers[questionNumber - 1]; // Get the correct answer
+      const answerText = document.getElementById(`answer-text-${questionNumber}`);
+
+      if (selectedAnswer === correctAnswer) {
+        answerText.innerText = "Correct! 🎉";
+        answerText.style.color = "#4CAF50"; // Green color for correct answer
+
+        // Fade out the answer text after 1 second
+        setTimeout(() => {
+          answerText.style.opacity = '0';
+        }, 1000);
+
+        // Hide the current question and show the next one after 1.5 seconds
+        setTimeout(() => {
+          document.getElementById(`question-${questionNumber}`).style.display = 'none';
+          if (questionNumber < 6) {
+            document.getElementById(`question-${questionNumber + 1}`).style.display = 'block';
+          } else {
+            // Show the final message
+            const finalMessage = document.getElementById('final-message');
+            finalMessage.style.display = 'block'; // Ensure the final message is visible
+          }
+        }, 1000);
+      } else {
+        answerText.innerText = "Oops! Try again. 😅";
+        answerText.style.color = "#e74c3c"; // Red color for incorrect answer
+        answerText.style.opacity = '1'; // Ensure the message is visible
+      }
+    }
+  </script>
+</body>
+</html>

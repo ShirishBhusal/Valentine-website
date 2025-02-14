@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Page</title>
+  <link rel="stylesheet" href="/final.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Finally</h2>
+
+    <!-- Countdown Timer -->
+    <div class="countdown">
+      <p id="countdown-text"></p>
+      <p id="countdown-timer">5</p>
+    </div>
+
+    <!-- Valentine Question (Hidden Initially) -->
+    <div id="valentine-question" class="valentine-question" style="display: none;">
+      <p>Will you make me the happiest men in the whole world? Will you be my Valentine?</p>
+      <button id="yes-button" onclick="showMessage('yes')">Yes 💖</button>
+      <button id="no-button" onclick="showMessage('no')">No 😢</button>
+    </div>
+
+    <!-- Hidden Message -->
+    <p id="hidden-message" class="hidden-message"></p>
+  </div>
+
+  <script>
+    // Countdown Timer
+    let countdown = 5;
+    const countdownTimer = document.getElementById('countdown-timer');
+    const countdownText = document.getElementById('countdown-text');
+    const valentineQuestion = document.getElementById('valentine-question');
+
+    const timer = setInterval(() => {
+      countdown--;
+      countdownTimer.innerText = countdown;
+
+      if (countdown === 0) {
+        clearInterval(timer);
+        countdownTimer.style.display = 'none';
+        countdownText.style.display = 'none';
+        valentineQuestion.style.display = 'block'; // Show the Valentine question
+      }
+    }, 1000);
+
+    // Function to show message based on the answer
+    function showMessage(answer) {
+      const hiddenMessage = document.getElementById('hidden-message');
+
+      if (answer === 'yes') {
+        hiddenMessage.innerText = "You know what, Shirish doesn't know what you pressed 😅. It would be better if you text him personally. 💖";
+      } else if (answer === 'no') {
+        hiddenMessage.innerText = "This is what he fears the most. It's all right; he will wait. 😢";
+      }
+
+      hiddenMessage.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

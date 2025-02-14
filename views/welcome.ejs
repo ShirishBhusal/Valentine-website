@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome <%= name %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= name %>!</h1>
+    <p>You are the most beautiful person in the world. 💖</p>
+    
+    <!-- Yes/No Buttons -->
+    <div id="choice-container">
+      <p>Do you wanna proceed more?</p>
+      <button id="yes-button">Yes</button>
+      <button id="no-button">No</button>
+    </div>
+
+    <!-- Question Section (Hidden Initially) -->
+    <div id="question-container" style="display: none;">
+      <p>What do you think, who made this for you?</p>
+      <input type="text" id="answer-input" placeholder="Your Answer">
+      <button id="submit-answer">Submit</button>
+      <p id="error-message" style="color: red; display: none;">Oops! Try again.</p>
+    </div>
+
+    <!-- Dialogue Box for No Button (Hidden Initially) -->
+    <div id="message-box" style="display: none;">
+      <p>Don’t break my heart, please press Yes. 💔</p>
+    </div>
+  </div>
+
+  <!-- Include JavaScript -->
+  <script src="/script.js"></script>
+</body>
+</html>

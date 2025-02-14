@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Counter</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>January 4, 2021 - The Day It All Started</h2>
+    <p class="subtext">This was the first day we talked. Little did I know, it would change everything!</p>
+    <div class="love-counter">
+      <p id="timeText"></p> <!-- Time passed will be displayed here -->
+    </div>
+    <!-- Next Button -->
+    <form action="/quiz" method="GET">
+      <button type="submit" id="next-button">Next</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to calculate the time difference
+    function calculateTimePassed() {
+      const startDate = new Date('2021-01-04'); // Start date (January 4, 2021)
+      const currentDate = new Date(); // Current date
+
+      // Calculate the difference in milliseconds
+      const diffTime = currentDate - startDate;
+
+      // Calculate years, months, days, hours, minutes, and seconds
+      const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25)); // Years
+      const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30)); // Months
+      const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)); // Days
+      const hours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Hours
+      const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60)); // Minutes
+      const seconds = Math.floor((diffTime % (1000 * 60)) / 1000); // Seconds
+
+      // Display the result in the 'timeText' paragraph
+      const timeText = `It's been ${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds since we first talked.`;
+      document.getElementById('timeText').innerText = timeText;
+    }
+
+    // Update the time passed every second
+    setInterval(calculateTimePassed, 1000);
+
+    // Initial call to display the time immediately
+    calculateTimePassed();
+  </script>
+</body>
+</html>

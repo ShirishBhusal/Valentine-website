@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    color: #e74c3c;
+    font-size: 1.8rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+  }
+  
+  #choice-container {
+    margin-top: 20px;
+  }
+  
+  #choice-container p {
+    margin-bottom: 10px;
+  }
+  
+  #yes-button, #no-button {
+    width: 48%;
+    display: inline-block;
+    margin: 5px 1%;
+  }
+  
+  #yes-button {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  #no-button {
+    background-color: #e74c3c; /* Red */
+  }
+  
+  #question-container {
+    margin-top: 20px;
+  }
+  
+  #error-message {
+    margin-top: 10px;
+  }
+  
+  #message-box {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #e74c3c;
+  }
+  
+  /* Media Queries for Smaller Screens */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
